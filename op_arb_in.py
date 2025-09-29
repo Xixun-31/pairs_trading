@@ -62,6 +62,16 @@ positions.loc[short_cond, "OP-USD"]  = -1
 positions.loc[short_cond, "ARB-USD"] =  1
 positions.loc[close_cond, :] = 0
 
+# 設定止損閾值，例如 spread 超過 ±5% 的價格就止損
+stop_loss_threshold = 0.15  # 可自行調整
+
+# 計算止損條件
+stop_loss_cond = (spread / Y).abs() > stop_loss_threshold
+
+# 將止損條件平倉
+positions.loc[stop_loss_cond, :] = 0
+
+
 # 設定手續費與滑點
 commission = 0.001  # 0.1%
 slippage = 0.0005   # 0.05%

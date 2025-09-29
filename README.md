@@ -55,6 +55,7 @@ z-score = (spread - rolling_mean) / rolling_std
 
 1. 安裝必要套件：
 ```bash
+python3 -m venv .venv && source .venv/bin/activate
 pip install pandas numpy matplotlib statsmodels pycoingecko
 ```
 
