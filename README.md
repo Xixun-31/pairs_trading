@@ -88,7 +88,7 @@ python arb_matic_relative.py # ARB / MATIC 相關係數
 
 ## 策略結果概覽（樣本內 / 樣本外）
 
-## 樣本內 (前200天到2025/09/30)
+## 樣本內 (2025/03/12 - 2025/09/29)
 
 ### OP / ARB
 - **Overall daily returns correlation:** 0.9178  
@@ -123,7 +123,7 @@ python arb_matic_relative.py # ARB / MATIC 相關係數
 - **Annualized Sharpe Ratio:** 1.2636  
 - **Maximum Drawdown:** -18.46%  
 
-## 樣本外 (2024-10-01 ~ 2025-09-30)
+## 樣本外 (2024/09/29 - 2025/03/12)
 
 ### OP / ARB
 - **Overall daily returns correlation:** 0.9178  
