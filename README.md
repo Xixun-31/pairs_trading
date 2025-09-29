@@ -94,15 +94,15 @@ pip install pandas numpy matplotlib statsmodels pycoingecko
 
 2. 執行各個交易對的策略腳本：
 ```
-python op_arb_pairs.py   # OP / ARB
-python op_arb_pairs.py   # OP / ARB
-python op_arb_pairs.py   # OP / ARB
-python op_matic_pairs.py # OP / MATIC
-python op_matic_pairs.py # OP / MATIC
-python op_matic_pairs.py # OP / MATIC
-python arb_matic_in.py # ARB / MATIC
-python arb_matic_out.py # ARB / MATIC
-python arb_matic_relative.py # ARB / MATIC
+python op_arb_in.py   # OP / ARB 樣本內
+python op_arb_out.py   # OP / ARB 樣本外
+python op_arb_relative.py   # OP / ARB 相關係數
+python op_matic_in.py # OP / MATIC 樣本內
+python op_matic_out.py # OP / MATIC 樣本外
+python op_matic_relative.py # OP / MATIC 相關係數
+python arb_matic_in.py # ARB / MATIC 樣本內
+python arb_matic_out.py # ARB / MATIC 樣本外
+python arb_matic_relative.py # ARB / MATIC 相關係數
 ```
 
 4. 結果包含：
@@ -120,44 +120,47 @@ python arb_matic_relative.py # ARB / MATIC
 
 ---
 
-## 策略結果概覽
+## 策略結果概覽（樣本內 / 樣本外）
 
 ### OP / ARB
-- **Final cumulative return:** 1.1014  
-- **Total trades:** 46  
-- **Average holding days per trade:** 4.35  
-- **OLS alpha:** 0.4743, **beta:** 0.5934  
-- **p-value for alpha:** 4.65e-37  
-- **p-value for beta:** 1.07e-13  
-- **Annualized Sharpe Ratio:** 0.6368  
-- **Maximum Drawdown:** -10.23%
+- **Overall daily returns correlation:** 0.9178
+- **Final cumulative return:** 1.2518 / 1.0697
+- **Total trades:** 46 / 26
+- **Average holding days per trade:** 4.35 / 6.35
+- **OLS alpha:** 0.4743 / 0.2373, **beta:** 0.5934 / 2.1829
+- **p-value for alpha:** 4.65e-37 / 1.74e-08
+- **p-value for beta:** 1.07e-13 / 6.87e-82
+- **Annualized Sharpe Ratio:** 1.4710 / 0.5442
+- **Maximum Drawdown:** -8.02% / -13.14%
 
 ### OP / MATIC
-- **Final cumulative return:** 1.0697  
-- **Total trades:** 26  
-- **Average holding days per trade:** 6.35  
-- **OLS alpha:** 0.2373, **beta:** 2.1829  
-- **p-value for alpha:** 1.74e-08  
-- **p-value for beta:** 6.87e-82  
-- **Annualized Sharpe Ratio:** 0.5442  
-- **Maximum Drawdown:** -13.14%
+- **Overall daily returns correlation:** 0.7648
+- **Final cumulative return:** 1.4533 / 1.4549
+- **Total trades:** 48 / 29
+- **Average holding days per trade:** 4.17 / 5.69
+- **OLS alpha:** 0.2534 / 0.1229, **beta:** 2.0362 / 3.7347
+- **p-value for alpha:** 9.26e-09 / 4.74e-03
+- **p-value for beta:** 6.79e-22 / 6.33e-82
+- **Annualized Sharpe Ratio:** 1.4725 / 1.5547
+- **Maximum Drawdown:** -16.18% / -12.33%
 
 ### ARB / MATIC
-- **Final cumulative return:** 1.7780  
-- **Total trades:** 34  
-- **Average holding days per trade:** 4.85  
-- **OLS alpha:** -0.0453, **beta:** 1.6936  
-- **p-value for alpha:** 1.03e-07  
-- **p-value for beta:** 1.40e-140  
-- **Annualized Sharpe Ratio:** 3.0544  
-- **Maximum Drawdown:** -6.92%
+- **Overall daily returns correlation:** 0.7693
+- **Final cumulative return:** 1.3810 / 1.7780
+- **Total trades:** 34 / 34
+- **Average holding days per trade:** 5.88 / 4.85
+- **OLS alpha:** -0.1199 / -0.0453, **beta:** 2.3037 / 1.6936
+- **p-value for alpha:** 2.42e-06 / 1.03e-07
+- **p-value for beta:** 2.26e-52 / 1.40e-140
+- **Annualized Sharpe Ratio:** 1.2636 / 3.0544
+- **Maximum Drawdown:** -18.46% / -6.92%
 
 ---
 
 ## 可調整參數
 
-- `z_open`：開倉 z-score 閾值（預設 1.0~1.1）  
-- `z_close`：平倉 z-score 閾值（預設 0.5~0.55）  
+- `z_open`：開倉 z-score 閾值（預設 1.1）  
+- `z_close`：平倉 z-score 閾值（預設 0.5）  
 - `rolling_window`：計算 rolling mean & std 的視窗大小（預設 30 天）  
 - `commission`：手續費比例（預設 0.001）  
 - `slippage`：滑點比例（預設 0.0005）
@@ -168,7 +171,7 @@ python arb_matic_relative.py # ARB / MATIC
 
 1. **樣本內 vs 樣本外**  
    - 調整參數過度適配樣本內資料可能導致樣本外表現下降  
-   - 建議分區段測試（例如前 365 天到 200 天作樣本內，最近 200 天作樣本外）
+   - 建議分區段測試（例如前 365 天到 200 天作樣本外，最近 200 天作樣本內）
 
 2. **幣種相關性**  
    - 策略依賴高度相關的交易對，低相關可能導致 z-score 信號不穩定
