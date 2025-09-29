@@ -91,28 +91,6 @@ z-score = (spread - rolling_mean) / rolling_std
 ```bash
 pip install pandas numpy matplotlib statsmodels pycoingecko
 
-5. **交易信號**  
-- 開倉閾值 (`z_open`)  
-- 平倉閾值 (`z_close`)  
-- 建立倉位矩陣，Long/Short 根據 z-score 判斷
-
-6. **績效回測**  
-- 扣除手續費 (`commission`) 與滑點 (`slippage`)  
-- 計算策略每日收益、累積收益  
-- 統計指標：
-  - 累積報酬率 (Cumulative Return)
-  - 夏普比率 (Sharpe Ratio)
-  - 最大回撤 (Maximum Drawdown)
-  - 交易次數與平均持倉天數
-
----
-
-## 使用方法
-
-1. 安裝必要套件：
-```bash
-pip install pandas numpy matplotlib statsmodels pycoingecko
-
 2. 執行各個交易對的策略腳本：
 python op_arb_pairs.py   # OP / ARB
 python op_matic_pairs.py # OP / MATIC
