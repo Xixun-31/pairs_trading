@@ -95,8 +95,14 @@ pip install pandas numpy matplotlib statsmodels pycoingecko
 2. 執行各個交易對的策略腳本：
 ```
 python op_arb_pairs.py   # OP / ARB
+python op_arb_pairs.py   # OP / ARB
+python op_arb_pairs.py   # OP / ARB
 python op_matic_pairs.py # OP / MATIC
-python arb_matic_pairs.py # ARB / MATIC
+python op_matic_pairs.py # OP / MATIC
+python op_matic_pairs.py # OP / MATIC
+python arb_matic_in.py # ARB / MATIC
+python arb_matic_out.py # ARB / MATIC
+python arb_matic_relative.py # ARB / MATIC
 ```
 
 4. 結果包含：
