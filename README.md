@@ -90,13 +90,16 @@ z-score = (spread - rolling_mean) / rolling_std
 1. 安裝必要套件：
 ```bash
 pip install pandas numpy matplotlib statsmodels pycoingecko
+```
 
 2. 執行各個交易對的策略腳本：
+```
 python op_arb_pairs.py   # OP / ARB
 python op_matic_pairs.py # OP / MATIC
 python arb_matic_pairs.py # ARB / MATIC
+```
 
-3. 結果包含：
+4. 結果包含：
 - 累積收益圖（需另行生成）
 - z-score 與交易訊號圖（需另行生成）
 - 策略 P&L 分布圖（需另行生成）
