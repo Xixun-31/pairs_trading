@@ -88,9 +88,11 @@ python arb_matic_relative.py # ARB / MATIC 相關係數
 
 ## 策略結果概覽（樣本內 / 樣本外）
 
-## 樣本內 (2025/03/12 - 2025/09/29)
+#####程式執行時會依照當下時間去跑
 
-### OP / ARB
+### 樣本內 (2025/03/12 - 2025/09/29)
+
+#### OP / ARB
 - **Overall daily returns correlation:** 0.9178  
 - **Final cumulative return:** 1.2518  
 - **Total trades:** 46  
@@ -101,7 +103,7 @@ python arb_matic_relative.py # ARB / MATIC 相關係數
 - **Annualized Sharpe Ratio:** 1.4710  
 - **Maximum Drawdown:** -8.02%  
 
-### OP / MATIC
+#### OP / MATIC
 - **Overall daily returns correlation:** 0.7648  
 - **Final cumulative return:** 1.4533  
 - **Total trades:** 48  
@@ -112,7 +114,7 @@ python arb_matic_relative.py # ARB / MATIC 相關係數
 - **Annualized Sharpe Ratio:** 1.4725  
 - **Maximum Drawdown:** -16.18%  
 
-### ARB / MATIC
+#### ARB / MATIC
 - **Overall daily returns correlation:** 0.7693  
 - **Final cumulative return:** 1.3810  
 - **Total trades:** 34  
@@ -123,9 +125,9 @@ python arb_matic_relative.py # ARB / MATIC 相關係數
 - **Annualized Sharpe Ratio:** 1.2636  
 - **Maximum Drawdown:** -18.46%  
 
-## 樣本外 (2024/09/29 - 2025/03/12)
+### 樣本外 (2024/09/29 - 2025/03/12)
 
-### OP / ARB
+#### OP / ARB
 - **Overall daily returns correlation:** 0.9178  
 - **Final cumulative return:** 1.0697  
 - **Total trades:** 26  
@@ -136,7 +138,7 @@ python arb_matic_relative.py # ARB / MATIC 相關係數
 - **Annualized Sharpe Ratio:** 0.5442  
 - **Maximum Drawdown:** -13.14%  
 
-### OP / MATIC
+#### OP / MATIC
 - **Overall daily returns correlation:** 0.7648  
 - **Final cumulative return:** 1.4549  
 - **Total trades:** 29  
@@ -147,7 +149,7 @@ python arb_matic_relative.py # ARB / MATIC 相關係數
 - **Annualized Sharpe Ratio:** 1.5547  
 - **Maximum Drawdown:** -12.33%  
 
-### ARB / MATIC
+#### ARB / MATIC
 - **Overall daily returns correlation:** 0.7693  
 - **Final cumulative return:** 1.7780  
 - **Total trades:** 34  
@@ -156,7 +158,7 @@ python arb_matic_relative.py # ARB / MATIC 相關係數
 - **p-value for alpha:** 1.03e-07  
 - **p-value for beta:** 1.40e-140  
 - **Annualized Sharpe Ratio:** 3.0544  
-- **Maximum Drawdown:** -6.92%  
+- **Maximum Drawdown:** -6.92%
 
 ---
 
