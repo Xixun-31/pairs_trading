@@ -32,40 +32,6 @@
    - 計算 alpha、beta，並檢查統計顯著性（p-value）
 
 4. **Spread 與 Z-Score 計算**  
-# Pairs Trading Strategy Analysis
-
-## 專案簡介
-這個專案使用 Python 與 CoinGecko API，對多組加密貨幣進行 Pairs Trading（配對交易）策略分析，包含以下交易對：
-
-- OP / ARB  
-- OP / MATIC  
-- ARB / MATIC  
-
-策略基於日線價格回歸分析（OLS），計算 spread 與 z-score，並透過動態閾值決定開倉與平倉時機，考慮手續費與滑點後回測績效。
-
----
-
-## 技術堆疊
-- Python 3.x  
-- pandas, numpy, matplotlib, statsmodels  
-- CoinGeckoAPI (抓取加密貨幣歷史價格)  
-
----
-
-## 策略流程
-
-1. **資料抓取**  
-   使用 CoinGecko API 抓取指定幣種的日線歷史價格。
-
-2. **資料整理**  
-   - 計算每日報酬率 (`pct_change()`)  
-   - 合併成 DataFrame 便於後續回歸與分析
-
-3. **OLS 回歸**  
-   - 用其中一個幣種價格對另一個幣種價格做線性回歸  
-   - 計算 alpha、beta，並檢查統計顯著性（p-value）
-
-4. **Spread 與 Z-Score 計算**  
 Spread = Y - (alpha + beta * X)
 z-score = (spread - rolling_mean) / rolling_std
 
